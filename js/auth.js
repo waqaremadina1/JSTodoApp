@@ -1,25 +1,25 @@
 // Check if user is logged in
 function checkAuth() {
-    const user = localStorage.getItem('user');
+    // const user = localStorage.getItem('user');
     if (!user) {
-        if (window.location.pathname.includes('dashboard.html')) {
-            window.location.href = 'index.html';
+        // if (window.location.pathname.includes('dashboard.html')) {
+            // window.location.href = 'index.html';
         }
     } else {
-        if (!window.location.pathname.includes('dashboard.html')) {
-            window.location.href = 'dashboard.html';
+        // if (!window.location.pathname.includes('dashboard.html')) {
+            // window.location.href = 'dashboard.html';
         } else {
-            document.getElementById('userEmail').textContent = JSON.parse(user).email;
+            // document.getElementById('userEmail').textContent = JSON.parse(user).email;
         }
     }
 }
 
 // Handle Login
-function handleLogin(event) {
-    event.preventDefault();
+// function handleLogin(event) {
+//     event.preventDefault();
     
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+    // const email = document.getElementById('loginEmail').value;
+    // const password = document.getElementById('loginPassword').value;
     
     // Get users from localStorage
     const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -44,9 +44,9 @@ function handleLogin(event) {
 function handleRegister(event) {
     event.preventDefault();
     
-    const name = document.getElementById('registerName').value;
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
+    // const name = document.getElementById('registerName').value;
+    // const email = document.getElementById('registerEmail').value;
+    // const password = document.getElementById('registerPassword').value;
     
     // Get existing users
     const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -67,8 +67,8 @@ function handleRegister(event) {
     users.push(newUser);
     
     // Save to localStorage
-    localStorage.setItem('users', JSON.stringify(users));
-    localStorage.setItem('user', JSON.stringify(newUser));
+    // localStorage.setItem('users', JSON.stringify(users));
+    // localStorage.setItem('user', JSON.stringify(newUser));
     
     window.location.href = 'dashboard.html';
 }
@@ -78,8 +78,8 @@ function toggleForms() {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
     
-    loginForm.classList.toggle('hidden');
-    registerForm.classList.toggle('hidden');
+    // loginForm.classList.toggle('hidden');
+    // registerForm.classList.toggle('hidden');
 }
 
 // Logout function
@@ -92,15 +92,15 @@ function logout() {
 document.addEventListener('DOMContentLoaded', checkAuth);
 
 // Toggle password visibility
-function togglePasswordVisibility(inputId, icon) {
-    const passwordInput = document.getElementById(inputId);
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
-    } else {
-        passwordInput.type = 'password';
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-    }
-}
+// function togglePasswordVisibility(inputId, icon) {
+//     const passwordInput = document.getElementById(inputId);
+//     if (passwordInput.type === 'password') {
+//         passwordInput.type = 'text';
+//         icon.classList.remove('fa-eye-slash');
+//         icon.classList.add('fa-eye');
+//     } else {
+//         passwordInput.type = 'password';
+//         icon.classList.remove('fa-eye');
+//         icon.classList.add('fa-eye-slash');
+//     }
+// }
